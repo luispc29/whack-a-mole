@@ -6,11 +6,12 @@
   height: 241px;
   overflow: hidden;
 }
-.wgs-mole {
+.wgs__mole-head {
   position: absolute;
   width: 188px;
   height: 178px;
   left: 55px;
+  transition: margin-top 0.25s;
 }
 .wgs-hill {
   position: absolute;
@@ -19,12 +20,18 @@
   bottom: 0px;
 }
 
-.wgs-mole-head-hidden {
+.wgs__mole-head--hidden {
   margin-top: 241px;
 }
 
+.pf {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 /* UNCOMMENT THE CODE BELOW WHEN DIRECTED */
-/* .sb {
+.sb {
   background-color: cornflowerblue;
   border-bottom: 1px solid #645DED;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -35,15 +42,15 @@
   padding: 10px 20px;
 } */
 
-/* .sb__mole-counter {
+.sb__mole-counter {
   flex: 1 0 0;
   text-align: right;
-} */
+}
 
-/* .sb__score-holder {
+.sb__score-holder {
   flex: 1 0 0;
-} */
+}
 
-/* .sb__game-over--hidden {
+.sb__game-over--hidden {
   display: none;
-} */
+}

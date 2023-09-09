@@ -23,7 +23,7 @@ function popUpRandomMole() {
   clickable = true;
 
   // UNCOMMENT THIS LINE OF CODE WHEN DIRECTED
-  // moleHead.classList.remove('wgs__mole-head--hidden', 'wgs__mole-head--whacked');
+  moleHead.classList.remove('wgs__mole-head--hidden', 'wgs__mole-head--whacked');
 
   molesLeft -= 1;
   document.querySelector(".sb__moles").innerHTML = molesLeft;
@@ -37,6 +37,7 @@ function hideMole(mole) {
 
   setTimeout(popUpRandomMole, 500);
 }
+
 
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(popUpRandomMole, 0);
@@ -54,10 +55,21 @@ window.addEventListener("DOMContentLoaded", () => {
       hideMole(event.target);
 
       // UNCOMMENT THIS LINE OF CODE WHEN DIRECTED
-      // event.target.classList.add('wgs__mole-head--hidden');
+      event.target.classList.add('wgs__mole-head--hidden');
 
       // UNCOMMENT THIS LINE OF CODE WHEN DIRECTED FOR THE BONUS
-      // event.target.classList.add('wgs__mole-head--whacked');
+      event.target.classList.add('wgs__mole-head--whacked');
     });
   }
 });
+
+
+// mole head hidden test
+// window.addEventListener("DOMContentLoaded", () => {
+//   setInterval(() => {
+//     const moleHeads = document.querySelectorAll(".wgs__mole-head");
+//     for (let moleHead of moleHeads) {
+//       moleHead.classList.toggle("wgs__mole-head--hidden");
+//     }
+//   }, 1000);
+// });
