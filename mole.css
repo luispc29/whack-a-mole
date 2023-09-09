@@ -1,19 +1,26 @@
 /* Your code here */
 .wgs {
   display: inline-block;
+  position: relative;
+  width: 320px;
+  height: 241px;
+  overflow: hidden;
 }
 .wgs-mole {
   position: absolute;
   width: 188px;
   height: 178px;
   left: 55px;
-  transition: margin-top 0.25s;
 }
 .wgs-hill {
   position: absolute;
   width: 320px;
   height: 110px;
   bottom: 0px;
+}
+
+.wgs-mole-head-hidden {
+  margin-top: 241px;
 }
 
 /* UNCOMMENT THE CODE BELOW WHEN DIRECTED */
