@@ -38,11 +38,18 @@ function hideMole(mole) {
   setTimeout(popUpRandomMole, 500);
 }
 
+function showPow(pow) {
+  pow.classList.add("mole-powed");
+  setTimeout(function () {
+    pow.classList.remove("mole-powed");
+  }, 75);
+}
 
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(popUpRandomMole, 0);
 
   const moleHeads = document.querySelectorAll(".wgs__mole-head");
+
   for (let moleHead of moleHeads) {
     moleHead.addEventListener("click", (event) => {
       if (!clickable) return;
@@ -54,22 +61,25 @@ window.addEventListener("DOMContentLoaded", () => {
       clearTimeout(hideTimeout);
       hideMole(event.target);
 
+      let pow = event.target.nextElementSibling;
+      showPow(pow);
+
       // UNCOMMENT THIS LINE OF CODE WHEN DIRECTED
-      event.target.classList.add('wgs__mole-head--hidden');
+      event.target.classList.add("wgs__mole-head--hidden");
 
       // UNCOMMENT THIS LINE OF CODE WHEN DIRECTED FOR THE BONUS
-      event.target.classList.add('wgs__mole-head--whacked');
+      event.target.classList.add("wgs__mole-head--whacked");
     });
   }
 });
 
 
 // mole head hidden test
-// window.addEventListener("DOMContentLoaded", () => {
-//   setInterval(() => {
-//     const moleHeads = document.querySelectorAll(".wgs__mole-head");
-//     for (let moleHead of moleHeads) {
-//       moleHead.classList.toggle("wgs__mole-head--hidden");
-//     }
-//   }, 1000);
-// });
+window.addEventListener("DOMContentLoaded", () => {
+  setInterval(() => {
+    const moleHeads = document.querySelectorAll(".wgs__mole-head");
+    for (let moleHead of moleHeads) {
+      moleHead.classList.toggle("wgs__mole-head--hidden");
+    }
+  }, 1000);
+});
